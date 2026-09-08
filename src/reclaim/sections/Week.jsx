@@ -124,9 +124,9 @@ export default function Week() {
         <div className="grid-12 items-end">
           {/* Left: the number */}
           <div className="col-span-12 md:col-span-4 order-2 md:order-1 mt-10 md:mt-0">
-            <p className="eyebrow">Signature 01 — The week collapses</p>
+            <p className="eyebrow">Where your week goes</p>
             <div data-total className="num text-[clamp(3.4rem,6.6vw,7.4rem)] leading-[0.9] mt-4 whitespace-nowrap">40H</div>
-            <p className="eyebrow mt-3">Per week · repetitive work handled by systems</p>
+            <p className="eyebrow mt-3">Hours you still work · the rest is handled by AI systems</p>
 
             <ul className="mt-10 flex flex-col gap-3 max-w-[20rem]">
               {STAGE_LABELS.map(([n, l, delta]) => (
@@ -143,8 +143,8 @@ export default function Week() {
           <div className="col-span-12 md:col-span-8 order-1 md:order-2 relative">
             <div data-board className="flex flex-col gap-3 md:gap-4" style={{ transition: 'opacity .2s' }}>
               <div className="flex justify-between eyebrow pb-2">
-                <span>Mon — Fri · 5 × 8H</span>
-                <span className="hidden sm:inline">Blue line = handled by a system</span>
+                <span>Mon — Fri · 5 × 8H · keep scrolling</span>
+                <span className="hidden sm:inline">Blue line = work an AI system now does for you</span>
               </div>
               {rows.map((row, r) => (
                 <div className="week-row" key={row.day}>
@@ -171,7 +171,7 @@ export default function Week() {
             <div data-reveal className="absolute inset-0 flex flex-col justify-center pointer-events-none" style={{ opacity: 0 }}>
               <div className="num text-[clamp(3.6rem,9.4vw,10rem)] leading-[0.9] text-[var(--blue)] whitespace-nowrap">+10H 20M</div>
               <div className="display-m mt-3">Back to you.</div>
-              <p className="eyebrow mt-6">Every week. Without adding a single tool you have to manage.</p>
+              <p className="eyebrow mt-6">Every week. This is what Eirik teaches you to build.</p>
             </div>
           </div>
         </div>

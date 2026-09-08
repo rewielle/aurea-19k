@@ -55,7 +55,7 @@ export default function Disappear() {
       <div data-pin className="min-h-[100svh] wrap flex items-center py-24 md:py-0">
         <div className="grid-12 w-full items-center">
           <div className="col-span-12 md:col-span-6">
-            <p className="eyebrow">Signature 02 — The work disappears</p>
+            <p className="eyebrow">The shift</p>
             <div className="mt-6 grid" style={{ fontSize: 'clamp(2.5rem, 5.6vw, 6rem)', lineHeight: 0.94, letterSpacing: '-0.04em', fontWeight: 500 }}>
               <div data-h1 aria-hidden="true" style={{ gridArea: '1 / 1' }}>
                 <span className="mask-raw"><span>You don’t need</span></span>

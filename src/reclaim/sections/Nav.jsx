@@ -32,6 +32,16 @@ export default function Nav() {
   return (
     <>
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
+        <button type="button" onClick={() => openDrawer('workshop')} className="announce w-full text-left">
+          <div className="wrap flex items-center justify-between gap-4 h-9">
+            <span className="flex items-center gap-3 eyebrow whitespace-nowrap overflow-hidden" style={{ color: 'rgba(246,248,251,0.85)' }}>
+              <span className="live-dot" aria-hidden="true" />
+              <span className="hidden md:inline">Live workshop with Eirik · Build a week that needs less of you · 60 min · Free</span>
+              <span className="md:hidden">Live workshop with Eirik · 60 min · Free</span>
+            </span>
+            <span className="eyebrow hidden sm:inline-flex items-center gap-2" style={{ color: 'var(--ice)' }}>Reserve your seat <Arrow /></span>
+          </div>
+        </button>
         <div className="wrap flex items-center justify-between h-[4.5rem]">
           <a href="#top" onClick={(e) => go(e, '#top')} className="flex items-baseline gap-3">
             <span className="text-[1.35rem] font-semibold tracking-[-0.03em]">Reclaim</span>
@@ -59,7 +69,7 @@ export default function Nav() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[45] bg-[var(--bg)] md:hidden pt-28 wrap">
+        <div className="fixed inset-0 z-[45] bg-[var(--bg)] md:hidden pt-32 wrap">
           <div className="flex flex-col gap-6">
             {links.map(([label, href], i) => (
               <a key={href} href={href} onClick={(e) => go(e, href)} className="display-m" style={{ fontWeight: 500 }}>

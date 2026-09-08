@@ -209,6 +209,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
 .nav-link:hover { opacity: 1 } .nav-link:hover::after { transform: scaleX(1); }
 
+.announce { display: block; background: var(--ink); color: var(--ice); cursor: pointer; }
+.announce:hover .eyebrow { color: #fff !important; }
+.live-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--peach); box-shadow: 0 0 0 0 rgba(240,160,110,0.6); animation: pulse 2.4s ease-out infinite; flex: none; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(240,160,110,0.55); } 70% { box-shadow: 0 0 0 7px rgba(240,160,110,0); } 100% { box-shadow: 0 0 0 0 rgba(240,160,110,0); } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+
 /* ---------- Hero ---------- */
 .hero-img {
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.55) 22%, #000 48%);

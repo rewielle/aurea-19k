@@ -8,7 +8,7 @@ export default function Philosophy() {
       <div className="wrap min-h-[140vh] flex flex-col justify-center py-[20vh]">
         <Reveal className="grid-12">
           <div className="col-span-12 md:col-span-7 md:col-start-3">
-            <p className="eyebrow fade">Signature 03 — Time returns as space</p>
+            <p className="eyebrow fade">Why this exists</p>
             <h2 className="mt-12 font-medium tracking-[-0.035em] leading-[1]" style={{ fontSize: 'clamp(2.2rem, 4.8vw, 5rem)' }}>
               <Lines lines={['Technology should', 'give you more life.']} />
             </h2>
