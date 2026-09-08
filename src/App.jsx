@@ -1,6 +1,6 @@
 import React from 'react';
-import AureaAwwwardsMaster from './v2/AureaAwwwardsMaster';
+import ReclaimSite from './reclaim/ReclaimSite.jsx';
 
 export default function App() {
-  return <AureaAwwwardsMaster />;
+  return <ReclaimSite />;
 }
