@@ -74,14 +74,14 @@ export default function Beyond() {
                 <video
                   ref={video}
                   className="img-cover scale-[1.15] will-change-transform"
-                  src="/eder/video/sea.mp4"
-                  poster="/eder/img/sea-03.jpg"
+                  src="/eder/video/lancha-sunset.mp4"
+                  poster="/eder/img/lancha-sunset.jpg"
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
-                  aria-label="Lancha em Fernando de Noronha, saxofone e mar"
+                  aria-label="Eder tocando em uma lancha ao pôr do sol, com saxofonista"
                 />
               </div>
               <div className="flex items-center justify-between mt-4">

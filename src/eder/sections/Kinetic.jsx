@@ -22,6 +22,7 @@ const FRAMES = [
   { src: '/eder/img/ig-02.jpg', alt: 'Mergulho em Noronha' },
 ];
 
+const MOBILE_COUNT = 10;
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
@@ -32,20 +33,22 @@ export default function Kinetic() {
   const items = useRef([]);
 
   useEffect(() => {
-    const N = FRAMES.length;
     const els = items.current;
+    let N = FRAMES.length;
     let vw = 0; let W = 0; let H = 0; let S = 0; let R = 0;
 
     const measure = () => {
       vw = window.innerWidth;
       const vh = window.innerHeight;
       const desktop = vw >= 1024;
-      W = desktop ? 104 : Math.max(52, Math.min(64, vw * 0.15));
+      N = desktop ? FRAMES.length : MOBILE_COUNT;
+      W = desktop ? 116 : Math.max(84, Math.min(104, vw * 0.25));
       H = W * 1.25;
-      S = W * 1.26;
-      R = desktop ? Math.min(vh * 0.36, 330, vw * 0.22) : Math.min(vw * 0.4, 170);
-      els.forEach((el) => {
+      S = W * 1.22;
+      R = desktop ? Math.min(vh * 0.37, 340, vw * 0.23) : Math.min(vw * 0.44, 190);
+      els.forEach((el, i) => {
         if (!el) return;
+        el.style.display = i < N ? '' : 'none';
         el.style.width = `${W}px`;
         el.style.height = `${H}px`;
         el.style.marginLeft = `${-W / 2}px`;
@@ -112,7 +115,7 @@ export default function Kinetic() {
         <div ref={copy} className="absolute inset-0 flex items-center justify-center text-center pointer-events-none will-change-[opacity,transform]" style={{ opacity: 0 }}>
           <div>
             <p className="label label-gold mb-3">Um som.</p>
-            <h2 className="display-md text-[var(--off)] leading-[1.05]">
+            <h2 className="display-md !text-[1.35rem] lg:!text-[3.2rem] text-[var(--off)] leading-[1.05]">
               <span className="block">Muitos</span>
               <span className="block">cenários.</span>
             </h2>
