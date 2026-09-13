@@ -8,17 +8,17 @@ gsap.registerPlugin(ScrollTrigger);
 const FRAMES = [
   { src: '/eder/img/ig-01.jpg', alt: 'Festa de barco, todos de branco' },
   { src: '/eder/img/sea-03.jpg', alt: 'Lancha em alto-mar' },
-  { src: '/eder/img/show-3.jpg', alt: 'Éder no palco com microfone' },
-  { src: '/eder/img/ig-06.jpg', alt: 'Éder tocando no barco' },
+  { src: '/eder/img/show-3.jpg', alt: 'Eder no palco com microfone' },
+  { src: '/eder/img/ig-06.jpg', alt: 'Eder tocando no barco' },
   { src: '/eder/img/lancha-sunset.jpg', alt: 'Set ao pôr do sol na lancha com saxofone' },
   { src: '/eder/img/ig-05.jpg', alt: 'Chegada em Fernando de Noronha' },
   { src: '/eder/img/stage-blue.jpg', alt: 'Show com luzes azuis e público' },
   { src: '/eder/img/ig-08.jpg', alt: 'Amigos no barco' },
   { src: '/eder/img/club-red.jpg', alt: 'Casa de show lotada' },
-  { src: '/eder/img/ig-04.jpg', alt: 'Éder com as aves de Noronha' },
+  { src: '/eder/img/ig-04.jpg', alt: 'Eder com as aves de Noronha' },
   { src: '/eder/img/sea-05.jpg', alt: 'Saxofone na proa' },
   { src: '/eder/img/ig-10.jpg', alt: 'Festa no barco' },
-  { src: '/eder/img/show-1.jpg', alt: 'Palco com telão Éder Noronha' },
+  { src: '/eder/img/show-1.jpg', alt: 'Palco com telão Eder Noronha' },
   { src: '/eder/img/ig-02.jpg', alt: 'Mergulho em Noronha' },
 ];
 

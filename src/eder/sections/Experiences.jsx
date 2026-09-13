@@ -23,7 +23,7 @@ const CHAPTERS = [
     text: 'A música também navega. Sets em alto-mar com o Morro do Pico no horizonte e o sol como iluminação.',
     tags: 'Sunset · Passeios privados · Noronha',
     img: '/eder/img/lancha.jpg',
-    alt: 'Éder e amigos dançando em uma lancha com Fernando de Noronha ao fundo',
+    alt: 'Eder e amigos dançando em uma lancha com Fernando de Noronha ao fundo',
     pos: 'object-[50%_30%]',
   },
   {
@@ -32,7 +32,7 @@ const CHAPTERS = [
     text: 'Grandes públicos, grandes energias. Palco, banda e microfone na mão: um show completo.',
     tags: 'Palco · Banda · Grandes públicos',
     img: '/eder/img/show-1.jpg',
-    alt: 'Éder Noronha cantando no palco de um festival',
+    alt: 'Eder Noronha cantando no palco de um festival',
     pos: 'object-[55%_40%]',
   },
   {
@@ -41,7 +41,7 @@ const CHAPTERS = [
     text: 'Da pista ao after. Presença de palco em casas de show, eventos privados e corporativos.',
     tags: 'Clubs · Privados · Corporativo',
     img: '/eder/img/club-stage.jpg',
-    alt: 'Éder no palco de uma casa de show lotada',
+    alt: 'Eder no palco de uma casa de show lotada',
     pos: 'object-[50%_35%]',
   },
 ];

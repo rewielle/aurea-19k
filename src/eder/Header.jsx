@@ -49,8 +49,8 @@ export default function Header({ ready }) {
         transition={{ duration: 1, ease: EASE, delay: 0.2 }}
       >
         <div className="container-x flex items-center justify-between h-[68px] lg:h-[84px]">
-          <a href="#inicio" onClick={go('inicio')} className="wordmark text-[0.68rem] lg:text-[0.78rem] leading-[0.95] tracking-[0.06em]" aria-label="Éder Noronha — início">
-            <span className="block">Éder</span>
+          <a href="#inicio" onClick={go('inicio')} className="wordmark text-[0.68rem] lg:text-[0.78rem] leading-[0.95] tracking-[0.06em]" aria-label="Eder Noronha — início">
+            <span className="block">Eder</span>
             <span className="block">Noronha</span>
           </a>
 

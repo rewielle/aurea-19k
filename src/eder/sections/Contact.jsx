@@ -58,7 +58,7 @@ export default function Contact() {
       {/* Bottom bar */}
       <div className="relative container-x py-8 border-t border-[var(--off-10)] flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <button type="button" onClick={() => scrollToId('inicio')} className="wordmark text-left text-[0.72rem] leading-[0.95] tracking-[0.06em]" aria-label="Voltar ao topo">
-          <span className="block">Éder</span>
+          <span className="block">Eder</span>
           <span className="block">Noronha</span>
         </button>
         <p className="label text-[0.55rem]">Do mar ao palco · Música, liberdade, boas energias</p>
@@ -68,7 +68,7 @@ export default function Contact() {
           <a href="https://open.spotify.com/search/eder%20noronha" target="_blank" rel="noreferrer" aria-label="Spotify" className="hover:text-[var(--gold)] transition-colors"><Spotify className="w-[18px] h-[18px]" /></a>
           <a href={`mailto:${EMAIL}`} aria-label="E-mail" className="hover:text-[var(--gold)] transition-colors"><Mail className="w-[18px] h-[18px]" /></a>
         </div>
-        <p className="label text-[0.5rem]">© {new Date().getFullYear()} Éder Noronha</p>
+        <p className="label text-[0.5rem]">© {new Date().getFullYear()} Eder Noronha</p>
       </div>
     </footer>
   );

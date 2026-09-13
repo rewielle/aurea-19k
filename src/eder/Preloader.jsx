@@ -42,7 +42,7 @@ export default function Preloader({ onDone }) {
                 animate={{ y: '0%' }}
                 transition={{ duration: 1, ease: EASE, delay: 0.55 }}
               >
-                Éder Noronha
+                Eder Noronha
               </motion.div>
             </div>
             <div className="overflow-hidden mt-2">

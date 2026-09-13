@@ -15,7 +15,7 @@ export default function Music() {
       <div className="lg:grid lg:grid-cols-12">
         {/* B&W portrait */}
         <div className="relative lg:col-span-6 h-[70svh] lg:h-[100svh] overflow-hidden">
-          <img src="/eder/img/stage-bw.jpg" alt="Éder Noronha no palco, em preto e branco" className="img-cover object-[55%_20%]" loading="lazy" />
+          <img src="/eder/img/stage-bw.jpg" alt="Eder Noronha no palco, em preto e branco" className="img-cover object-[55%_20%]" loading="lazy" />
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,8,11,0.9)_0%,rgba(5,8,11,0.1)_45%,rgba(5,8,11,0.2)_100%)] lg:bg-[linear-gradient(to_right,rgba(5,8,11,0.1)_0%,rgba(5,8,11,0)_60%,rgba(5,8,11,0.9)_100%)]" />
           <a
             href="https://www.youtube.com/results?search_query=dj+eder+noronha"

@@ -51,7 +51,7 @@ export default function Hero({ ready }) {
         >
           <picture>
             <source media="(min-width: 1024px)" srcSet="/eder/img/hero-desktop.jpg" />
-            <img src="/eder/img/hero-mobile.jpg" alt="Éder Noronha tocando ao vivo, com o mar de Fernando de Noronha ao fundo" className="img-cover object-[50%_28%] lg:object-[50%_50%]" fetchPriority="high" />
+            <img src="/eder/img/hero-mobile.jpg" alt="Eder Noronha tocando ao vivo, com o mar de Fernando de Noronha ao fundo" className="img-cover object-[50%_28%] lg:object-[50%_50%]" fetchPriority="high" />
           </picture>
         </motion.div>
         {/* Legibility gradients — warm to ink */}
@@ -82,7 +82,7 @@ export default function Hero({ ready }) {
             <h1 className="display-xl text-[var(--off)]">
               <span className="block overflow-hidden pt-[0.16em] -mt-[0.16em] pb-[0.04em]">
                 <motion.span className="block" initial={{ y: '105%' }} animate={ready ? { y: '0%' } : {}} transition={{ duration: 1.3, ease: EASE, delay: 0.55 }}>
-                  Éder
+                  Eder
                 </motion.span>
               </span>
               <span className="block overflow-hidden pt-[0.12em] -mt-[0.12em] pb-[0.06em]">
@@ -107,8 +107,8 @@ export default function Hero({ ready }) {
             animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: EASE, delay: 1.2 }}
           >
-            <p className="lede max-w-[34ch] lg:max-w-[30ch] !text-[0.95rem] lg:!text-[1.02rem]">
-              Música, liberdade e boas energias em qualquer horizonte. Casamentos, lanchas, shows e festivais.
+            <p className="caps-copy max-w-[30ch] lg:max-w-[28ch]">
+              Música, liberdade e boas energias em qualquer horizonte.
             </p>
             <div className="mt-6 flex items-center gap-6">
               <a href="#contato" onClick={go('contato')} className="btn btn-gold">

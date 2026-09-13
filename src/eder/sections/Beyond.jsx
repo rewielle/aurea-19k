@@ -46,7 +46,7 @@ export default function Beyond() {
               <Rule className="mb-8" />
               <Fade delay={0.1}>
                 <p className="lede max-w-[42ch]">
-                  Um set do Éder não é só uma sequência de músicas. É a leitura do momento: o sunset que pede calma, a pista que pede explosão, o casamento que pede memória.
+                  Um set do Eder não é só uma sequência de músicas. É a leitura do momento: o sunset que pede calma, a pista que pede explosão, o casamento que pede memória.
                 </p>
               </Fade>
               <Fade delay={0.2} className="mt-6">
