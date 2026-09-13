@@ -21,6 +21,7 @@ export default function Hero({ ready }) {
   const sun = useRef(null);
   const panel = useRef(null);
   const panelCopy = useRef(null);
+  const panelVideo = useRef(null);
   const content = useRef(null);
   const meta = useRef(null);
   const cue = useRef(null);
@@ -28,23 +29,31 @@ export default function Hero({ ready }) {
   useEffect(() => {
     const mm = gsap.matchMedia();
     const build = (desktop) => {
-      const startClip = desktop ? 'inset(0% 0% 40% 50%)' : 'inset(0% 0% 54% 0%)';
-      gsap.set(panel.current, { clipPath: startClip, opacity: 0 });
+      // A região de Noronha: metade de cima no celular, metade direita no desktop.
+      gsap.set(panel.current, {
+        clipPath: desktop ? 'inset(0% 0% 0% 44%)' : 'inset(0% 0% 56% 0%)',
+        maskImage: desktop
+          ? 'linear-gradient(to right, transparent 44%, black 62%)'
+          : 'linear-gradient(to bottom, black 27%, transparent 44%)',
+        WebkitMaskImage: desktop
+          ? 'linear-gradient(to right, transparent 44%, black 62%)'
+          : 'linear-gradient(to bottom, black 27%, transparent 44%)',
+        opacity: 0,
+      });
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
         scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom bottom', scrub: 0.8 },
       });
-      // 1. O sol baixa e o palco escurece
-      tl.to(sun.current, { yPercent: 60, opacity: 0.15, duration: 0.38 }, 0)
-        .to(dusk.current, { opacity: 0.6, duration: 0.38 }, 0)
-        .to(base.current, { filter: 'brightness(0.72) saturate(0.85)', scale: 1.06, duration: 0.5 }, 0)
-        // 2. Noronha cresce e vira vídeo
-        .to(panel.current, { clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, duration: 0.42 }, 0.28)
-        .to(content.current, { yPercent: -18, opacity: 0, duration: 0.3 }, 0.3)
-        .to(meta.current, { opacity: 0, duration: 0.2 }, 0.3)
-        .to(cue.current, { opacity: 0, duration: 0.15 }, 0.1)
+      // 1. O sol baixa e a luz muda
+      tl.to(sun.current, { yPercent: 55, opacity: 0.2, duration: 0.45 }, 0)
+        .to(dusk.current, { opacity: 0.45, duration: 0.45 }, 0)
+        .to(cue.current, { opacity: 0, duration: 0.15 }, 0.05)
+        .to(meta.current, { opacity: 0, duration: 0.2 }, 0.2)
+        // 2. A metade de Noronha vira vídeo — Eder e o nome ficam
+        .to(panel.current, { opacity: 1, duration: 0.4 }, 0.3)
+        .fromTo(panelVideo.current, { scale: 1.1 }, { scale: 1, duration: 0.6 }, 0.3)
         // 3. Texto sobre o mar
-        .fromTo(panelCopy.current, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.25 }, 0.66);
+        .fromTo(panelCopy.current, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.25 }, 0.62);
       return () => tl.scrollTrigger?.kill();
     };
     mm.add('(min-width: 1024px)', () => build(true));
@@ -55,7 +64,7 @@ export default function Hero({ ready }) {
   const go = (id) => (e) => { e.preventDefault(); scrollToId(id); };
 
   return (
-    <section id="inicio" ref={root} className="relative h-[240svh] bg-[var(--ink)]">
+    <section id="inicio" ref={root} className="relative h-[210svh] bg-[var(--ink)]">
       <div className="sticky top-0 h-[100svh] min-h-[620px] overflow-hidden">
         {/* Imagem base — palco + Noronha */}
         <motion.div
@@ -71,15 +80,14 @@ export default function Hero({ ready }) {
             animate={ready ? { scale: 1 } : {}}
             transition={{ duration: 2.2, ease: EASE }}
           >
-            <picture>
-              <source media="(min-width: 1024px)" srcSet="/eder/img/hero-desktop.jpg" />
-              <img src="/eder/img/hero-mobile.jpg" alt="Eder Noronha tocando ao vivo, com o mar de Fernando de Noronha ao fundo" className="img-cover object-[50%_50%]" fetchPriority="high" />
-            </picture>
+            <div className="hero-img absolute inset-x-0 bottom-0 top-[22svh] lg:top-0">
+              <img src="/eder/img/hero-desktop.jpg" alt="Eder Noronha tocando ao vivo, com o mar de Fernando de Noronha ao fundo" className="img-cover object-[40%_0%] lg:object-[50%_50%]" fetchPriority="high" />
+            </div>
           </motion.div>
           {/* Sol: brilho quente que desce com o scroll */}
           <div
             ref={sun}
-            className="absolute w-[70vw] h-[70vw] lg:w-[34vw] lg:h-[34vw] rounded-full pointer-events-none mix-blend-screen right-[-18vw] top-[10svh] lg:right-[-4vw] lg:top-[12svh] bg-[radial-gradient(circle,rgba(230,180,104,0.55)_0%,rgba(196,137,71,0.18)_35%,rgba(196,137,71,0)_62%)]"
+            className="absolute w-[70vw] h-[70vw] lg:w-[34vw] lg:h-[34vw] rounded-full pointer-events-none mix-blend-screen right-[-22vw] top-[4svh] lg:right-[-4vw] lg:top-[12svh] bg-[radial-gradient(circle,rgba(230,180,104,0.55)_0%,rgba(196,137,71,0.18)_35%,rgba(196,137,71,0)_62%)]"
           />
           {/* Anoitecer */}
           <div ref={dusk} className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,16,24,0.15)_0%,rgba(7,16,24,0.85)_100%)] opacity-0" />
@@ -89,9 +97,10 @@ export default function Hero({ ready }) {
         </motion.div>
 
         {/* Noronha — nasce da metade do mar e toma a tela como vídeo */}
-        <div ref={panel} className="absolute inset-0 will-change-[clip-path,opacity]" style={{ opacity: 0 }} aria-hidden="true">
+        <div ref={panel} className="absolute inset-0 will-change-[opacity]" style={{ opacity: 0 }} aria-hidden="true">
           <video
-            className="img-cover"
+            ref={panelVideo}
+            className="img-cover origin-center will-change-transform"
             src="/eder/video/sea.mp4"
             poster="/eder/img/sea-01.jpg"
             autoPlay
@@ -100,18 +109,14 @@ export default function Hero({ ready }) {
             playsInline
             preload="metadata"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,8,11,0.9)_0%,rgba(5,8,11,0.25)_45%,rgba(5,8,11,0.35)_100%)]" />
-          <div ref={panelCopy} className="absolute inset-x-0 bottom-0 container-x pb-16 lg:pb-24 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-end opacity-0">
-            <div className="lg:col-span-8">
-              <p className="label label-gold mb-4">Fernando de Noronha</p>
-              <h2 className="display-light text-[var(--off)]">
-                <span className="block">Onde tudo</span>
-                <span className="block">começa.</span>
-              </h2>
-            </div>
-            <div className="lg:col-span-4 mt-6 lg:mt-0 lg:pb-2">
-              <p className="caps-copy max-w-[30ch]">Mar, horizonte e liberdade. É daqui que sai a energia de cada set.</p>
-            </div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,8,11,0.55)_0%,rgba(5,8,11,0.15)_40%,rgba(5,8,11,0.6)_100%)]" />
+          <div ref={panelCopy} className="absolute container-x left-0 right-0 top-[11svh] lg:left-[52%] lg:right-0 lg:top-1/2 lg:-translate-y-1/2 opacity-0">
+            <p className="label label-gold mb-3">Fernando de Noronha</p>
+            <h2 className="display-light !text-[2rem] lg:!text-[3.6rem] text-[var(--off)]">
+              <span className="block">Onde tudo</span>
+              <span className="block">começa.</span>
+            </h2>
+            <p className="caps-copy max-w-[26ch] mt-4">Mar, horizonte e liberdade. É daqui que sai a energia de cada set.</p>
           </div>
         </div>
 

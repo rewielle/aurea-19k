@@ -223,6 +223,14 @@ body {
   pointer-events: none;
 }
 
+/* Hero: on phones the image sits lower so Eder stays under the Noronha region; soft top edge */
+@media (max-width: 1023px) {
+  .hero-img {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 14%);
+  }
+}
+
 /* Film grain (finish, not effect) --------------------------------- */
 .grain {
   position: fixed;
