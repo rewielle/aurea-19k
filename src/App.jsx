@@ -1,6 +1,6 @@
 import React from 'react';
-import AureaAwwwardsMaster from './v2/AureaAwwwardsMaster';
+import EderSite from './eder/EderSite';
 
 export default function App() {
-  return <AureaAwwwardsMaster />;
+  return <EderSite />;
 }
