@@ -52,15 +52,15 @@ export default function RealToStory({ reduced }) {
         <div className="real__book" aria-hidden="true">
           <div className="spread">
             <div className="spread__page spread__page--text">
-              They had known each other for eleven years, and still she found a new reason to laugh every single morning.
+              Every evening Luna waited at the window with her, certain the mountains were waiting for them too.
               <span className="pg">22</span>
             </div>
             <div className="spread__page spread__page--img" />
           </div>
         </div>
         <div className="real__frame">
-          <div className="real__photo"><Img src={IMG.real_couple} alt="A real couple, photographed" /></div>
-          <div className="real__illus" aria-hidden="true"><Img src={IMG.real_couple} alt="" /></div>
+          <div className="real__photo"><Img src={IMG.real_photo} alt="A girl and her golden retriever at the window, photographed" /></div>
+          <div className="real__illus" aria-hidden="true"><Img src={IMG.real_photo} alt="" /></div>
           <div className="real__edge" aria-hidden="true" />
         </div>
         <div className="real__labels" aria-hidden="true"><span>Their photo</span><span>Their story</span></div>

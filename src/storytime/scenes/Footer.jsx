@@ -1,8 +1,9 @@
 import React from 'react';
+import { IMG } from '../data';
 export default function Footer() {
   return (
     <footer className="footer" id="about" data-nav="dark">
-      <div className="footer__brand">Storytime</div>
+      <div className="footer__brand"><img src={IMG.star} alt="" className="nav__mark" />Storytime</div>
       <nav className="footer__links" aria-label="Footer">
         <a href="#stories">Stories</a><a href="#gifts">Gifts</a><a href="#pricing">Pricing</a><a href="#about">About</a>
       </nav>

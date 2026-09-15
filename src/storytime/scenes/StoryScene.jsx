@@ -214,7 +214,7 @@ export default function StoryScene({ reduced }) {
       const env = easeInOut(seg(q, 0.6, 0.7));
       lEnv.style.opacity = env;
       const charScale = lerp(1, isMobile ? 0.62 : 0.56, env);
-      const charX = lerp(0, isMobile ? 0 : -cw * 0.22, env), charY = lerp(0, isMobile ? ch * 0.16 : ch * 0.14, env);
+      const charX = lerp(0, isMobile ? 0 : -cw * 0.22, env), charY = lerp(0, isMobile ? -ch * 0.16 : ch * 0.12, env);
       [lIllus, lPhoto, lGrain].forEach((L) => {
         L.style.transform = `translate3d(${charX.toFixed(1)}px, ${charY.toFixed(1)}px, 0) scale(${charScale.toFixed(3)})`;
         L.style.borderRadius = `${env * 14}px`;
@@ -317,7 +317,7 @@ export default function StoryScene({ reduced }) {
           <div className="layer layer--illus"><Img src={IMG.luna_photo} alt="" /></div>
           <div className="layer layer--grain" />
           <div className="trans__copy">
-            <p>The boxes were still closed when Luna decided the new house needed exploring first — and that the mountains behind it needed a name.</p>
+            <p>The boxes were still closed when Luna decided the new house needed exploring first — and that the lighthouse across the bay needed a name.</p>
             <small>Chapter one · The day we moved</small>
           </div>
           <div className="trans__paper" />
