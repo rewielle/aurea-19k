@@ -56,12 +56,9 @@ export default function Hero({ reduced }) {
   return (
     <section ref={root} id="top" className={`hero ${typing ? 'is-typing' : ''}`} data-nav="dark" aria-label="Create a story">
       <div className="hero__world" aria-hidden="true">
-        <div className="hero__sky"><Img src={IMG.hero_view} alt="" eager /></div>
+        <div className="hero__sky"><Img src={IMG.hero_scene} alt="" eager /></div>
         <div className="hero__dof" />
-        <div className="hero__frame" />
-        <div className="hero__mullion" />
         <div className="hero__interior" />
-        <div className="hero__figure"><Img src={IMG.hero_figure} alt="" eager /></div>
         <div className="hero__lamp" />
       </div>
 

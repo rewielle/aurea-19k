@@ -11,24 +11,26 @@ const U = (id, w = 1200) =>
 
 const LOCAL = import.meta.env.VITE_LOCAL_IMAGES === '1';
 
+/* Storytime's own scene (public/storytime/img). Crops are generated from hero.jpg by scripts/crops.py */
+const OWN = (name) => `/storytime/img/${name}.jpg`;
+
 const RAW = {
   // hero + final atmospheres
-  hero_view: U('photo-1519681393784-d120267933ba', 2000), // mountains at night, blue hour
-  hero_figure: U('photo-1524504388940-b1c1722653e1', 900), // quiet human presence
-  final_lake: U('photo-1500673922987-e212871fec22', 2000), // dusk water & lights
-  bedside: U('photo-1502672260266-1c1ef2d93688', 1800), // warm interior, fabric
+  hero_scene: OWN('hero'), // bedroom at blue hour, girl + golden retriever, window to the lake
+  final_lake: OWN('lake'), // dusk water & lights (crop)
+  bedside: OWN('bedside'), // blanket, mug, warm interior (crop)
 
   // transformation + real → story
-  luna_photo: U('photo-1548199973-03cce0bbc87b', 1400), // girl + golden retriever
-  luna_env: U('photo-1506905925346-21bda4d32df4', 1600), // mountain scene
+  luna_photo: OWN('girl_dog'), // girl + golden retriever (crop)
+  luna_env: OWN('mountains'), // mountain scene (crop)
   real_couple: U('photo-1516589178581-6cd7833ae3b2', 1800),
 
   // book covers / spreads
-  cover_a: U('photo-1470252649378-9c29740c9fa8', 1000),
-  spread_a: U('photo-1505142468610-359e7d316be0', 1200),
+  cover_a: OWN('mountains'),
+  spread_a: OWN('village'),
   book_open: U('photo-1544947950-fa07a98d237f', 1800),
   book_pages: U('photo-1512820790803-83ca734da794', 1800),
-  quiet: U('photo-1476234251651-f353703a034d', 700),
+  quiet: OWN('girl_dog'),
 
   // plans
   plan_starter: U('photo-1544027993-37dbfe43562a', 1100),
@@ -64,8 +66,10 @@ const RAW = {
 };
 
 export const IMG = Object.fromEntries(
-  Object.entries(RAW).map(([k, v]) => [k, LOCAL ? `/storytime/img/${k}.jpg` : v])
+  Object.entries(RAW).map(([k, v]) => [k, LOCAL && v.startsWith('http') ? `/storytime/img/${k}.jpg` : v])
 );
+/** Image every failed load falls back to (seeded crop), so a blocked host never shows a broken tile. */
+export const FALLBACK_IMG = OWN('hero');
 export const IMG_REMOTE = RAW;
 
 /* Orbit tiles: varied aspect ratios (w/h). 24 tiles desktop, 12 mobile. */
