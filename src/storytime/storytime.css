@@ -301,7 +301,7 @@ body {
 .orbit__center {
   position: absolute; inset: 0; display: grid; place-items: center; text-align: center; pointer-events: none; z-index: 2;
 }
-.orbit__title { font-size: clamp(32px, 4.4vw, 64px); margin: 0; color: var(--navy); }
+.orbit__title { font-size: clamp(26px, 3.3vw, 48px); margin: 0; color: var(--navy); }
 .orbit__micro { margin-top: 12px; font-size: 11.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-mute); }
 .orbit__field { position: absolute; inset: 0; perspective: 1400px; transform-style: preserve-3d; }
 .tile {
@@ -479,7 +479,7 @@ body {
 /* ───────────────────────────── REAL → STORY ───────────────────────────── */
 .real { position: relative; background: var(--ivory); }
 .real__stage { position: relative; height: 100svh; overflow: hidden; }
-.real__frame { position: absolute; inset: 0; transform-origin: center; }
+.real__frame { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; }
 .real__photo, .real__illus { position: absolute; inset: 0; }
 .real__photo img, .real__illus img { width: 100%; height: 100%; object-fit: cover; }
 .real__illus { clip-path: inset(0 0 0 100%); }
