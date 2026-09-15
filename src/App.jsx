@@ -1,6 +1,6 @@
 import React from 'react';
-import AureaAwwwardsMaster from './v2/AureaAwwwardsMaster';
+import StorytimeSite from './storytime/StorytimeSite';
 
 export default function App() {
-  return <AureaAwwwardsMaster />;
+  return <StorytimeSite />;
 }
